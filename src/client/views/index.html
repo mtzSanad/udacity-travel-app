@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Travel App</title>
+  </head>
+  <body>
+    <header class="appHeader">Traveler Book</header>
+    <main class="container">
+      <form class="form" id="form">
+        <input
+          id="city"
+          type="text"
+          name="input"
+          value=""
+          placeholder="Enter City here"
+          required
+        />
+        <input
+          id="trip-date"
+          type="date"
+          name="input"
+          value=""
+          placeholder="Trip Date"
+          required
+        />
+        <input
+          id="return-date"
+          type="date"
+          name="input"
+          value=""
+          placeholder="Return Date"
+          required
+        />
+        <div>
+          <input
+          class="btn"
+          type="submit"
+          class="btn-submit"
+          id="sbtn"
+          value="Get Forecast"
+        />
+        <span  id="print-btn"><i class="fas fa-print"></i></span>
+        </div>
+        <div class="error" id="error"></div>
+      </form>
+      <section id="weather"></section>
+      <section id="images"></section>
+    </main>
+    <footer class="footer">All Rights Reserved msanad.com</footer>
+
+    <script>
+      // Check that service workers are supported
+      if ("serviceWorker" in navigator) {
+        // Use the window load event to keep the page load performant
+        window.addEventListener("load", () => {
+          navigator.serviceWorker.register("/service-worker.js");
+        });
+      }
+    </script>
+  </body>
+</html>
